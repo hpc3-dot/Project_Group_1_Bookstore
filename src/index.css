@@ -1,0 +1,118 @@
+/* Css for Bookstore
+Colors: font: book store brown: #593D2B
+background: warm cream #F5EFE6
+links: terracotta #A66A4C */
+
+body {
+  background-color: #f8eada;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #593D2B;
+  font-family: 'Arial', sans-serif;
+ 
+}
+.header {
+  display: flex;
+  justify-content: center;
+  color: #593D2B;
+  text-align: center;
+  align-items: center;
+  background-image: url('./assets/bkstrheader.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 150px;
+  width: 100%;
+}
+
+.navStyle:hover {
+  background-color: rgba(166, 108, 76, 0.2);
+  padding-left: 22px;
+  color: #FFFFFF;
+}
+.navStyle {
+  background-color: rgba(89, 61, 43, 0.5);
+  text-align: left;
+  padding: 12px 15px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  margin: 0px 5px;
+}
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  flex-direction: row;
+}
+
+
+.searchBox input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.bookCase {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap:20px;
+ 
+}
+.book{
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 300px;
+  height: 400px;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #D6C5B5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+}
+.bookInfo img {
+  width: 60%;
+  height: 80%;
+  border-radius: 12px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #593D2B;
+  text-align: center;
+  align-items: center;
+  background-image: url('./assets/bkstrfooter.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 150px;
+  width: 100%;
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "book_id": 1,
+    "genre": "Fantasy",
+    "title": "The Midnight Garden",
+    "author": "Evelyn Hart",
+    "synopsis": "A young girl discovers a hidden garden where forgotten memories come alive. As she explores its mysteries, she uncovers a secret about her family.",
+    "cover_art": "./bookstore-assets/images/covers/midnight-garden.png",
+    "age_group": "Young Adult"
+  },
+  {
+    "book_id": 2,
+    "genre": "Mystery",
+    "title": "Whispers of the Sea",
+    "author": "Clara Bennett",
+    "synopsis": "After discovering an old journal along the coast, a young journalist begins investigating a decades-old disappearance in a quiet seaside town.",
+    "cover_art": "./bookstore-assets/images/covers/whispers-sea.png",
+    "age_group": "Adult"
+  },
+  {
+    "book_id": 3,
+    "genre": "Science Fiction",
+    "title": "Beyond the Stars",
+    "author": "Daniel Brooks",
+    "synopsis": "A crew of astronauts discovers an abandoned spacecraft beyond the solar system and must uncover its secrets before returning home.",
+    "cover_art": "./bookstore-assets/images/covers/beyond-stars.png",
+    "age_group": "Adult"
+  },
+  {
+    "book_id": 4,
+    "genre": "Fantasy",
+    "title": "The Dragon's Promise",
+    "author": "Amelia Rivers",
+    "synopsis": "A young apprentice discovers a dragon egg hidden beneath an ancient castle and must protect it from a kingdom determined to destroy dragons.",
+    "cover_art": "./bookstore-assets/images/covers/dragons-promise.png",
+    "age_group": "Middle Grade"
+  },
+  {
+    "book_id": 5,
+    "genre": "Mystery",
+    "title": "Secrets of Willow Creek",
+    "author": "James Carter",
+    "synopsis": "When strange letters begin appearing throughout Willow Creek, three friends work together to uncover the mystery behind their small town.",
+    "cover_art": "./bookstore-assets/images/covers/willow-creek.png",
+    "age_group": "Young Adult"
+  },
+  {
+    "book_id": 6,
+    "genre": "Romance",
+    "title": "The Last Autumn",
+    "author": "Olivia Hayes",
+    "synopsis": "Two childhood friends reunite in their hometown and discover that some feelings never disappear, even after years apart.",
+    "cover_art": "./bookstore-assets/images/covers/last-autumn.png",
+    "age_group": "Adult"
+  }
+]
