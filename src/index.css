@@ -52,11 +52,15 @@ body {
   align-items: center;
   margin: 5px 0;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  flex-direction: row;
+  
+  flex-direction: column;
 }
-
-
+.searchButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
 .searchBox input {
   width: 300px;
   padding: 10px;
@@ -64,22 +68,29 @@ body {
   border: 1px solid #ccc;
   font-size: 16px;
 }
+.searchBox select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-left: 10px;
+}
 .bookCase {
-  padding: 20px;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  gap:20px;
- 
+   display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.bookCase h2 {
+    margin-bottom: 25px;
+    flex-shrink: 0;
 }
 .book{
   background-color: rgba(0, 0, 0, 0.05);
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 320px;
   box-sizing: border-box;
   padding: 15px;
   display: flex;
@@ -89,16 +100,33 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
+.bookCaseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.book:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  border-radius: 12px;
+}
 
 .bookInfo {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
   margin: 5px;
 }
-.bookInfo img {
+.bookCover {
   width: 60%;
   height: 80%;
   border-radius: 12px;
@@ -115,4 +143,16 @@ body {
   background-repeat: no-repeat;
   min-height: 150px;
   width: 100%;
+}
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
 }

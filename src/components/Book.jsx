@@ -1,15 +1,14 @@
 
 
 function Book({setPage, ...props}) {
+    const coverArt = `https://covers.openlibrary.org/b/isbn/${props.isbn}-L.jpg`
     return (
         <div className="book">
-            <h5>{props.title}</h5>
+            <img className="bookCover" src={props.cover_art} alt={props.title} /> 
             <div className="bookInfo">
-                <img src={props.cover_art} alt={props.title} /> 
-                <p>{props.author}</p>
                 <p>Rating:</p>
-                <a href="#" onClick={(e) => {e.preventDefault();setPage('details')}} className="navStyle">View More</a>
-            
+                <a href="#" onClick={(e) => {e.preventDefault();setPage('details', props)}} className="navStyle">View More</a>
+                {/* This book card has the title. */}
             </div>
         </div>
     )
