@@ -9,7 +9,7 @@ function BookCase({ setPage, searchValues }) {
     useEffect(() => {
         async function fetchBooks() {
             try{
-                const response = await fetch('/public/bookstore-assets/books.json');
+                const response = await fetch('/public/bookstore-assets/books');
                 const data = await response.json();
                 setbooks(data);
                 console.log(data);
