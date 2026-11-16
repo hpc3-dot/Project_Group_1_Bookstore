@@ -11,7 +11,7 @@ const SORTS = {
   author: 'a.author_name ASC',
   year: 'b.published_year DESC, b.title ASC',
   newest: 'b.book_id DESC',
-  rating: 'b.rating DESC NULLS LAST, b.title ASC',
+  // rating: 'b.rating DESC NULLS LAST, b.title ASC',
 };
 
 function buildBookQuery({ q, genre, rating, sort, id, limit = 100, offset = 0 }) {
@@ -30,10 +30,10 @@ function buildBookQuery({ q, genre, rating, sort, id, limit = 100, offset = 0 })
     );
   }
 
-  if (rating != null) {
+  /* if (rating != null) {
     params.push(Number(rating));
     conditions.push(`b.rating >= $${params.length}`);
-  }
+  } */
 
   let having = '';
   if (genre) {
@@ -58,8 +58,7 @@ function buildBookQuery({ q, genre, rating, sort, id, limit = 100, offset = 0 })
       b.published_year,
       b.description,
       b.isbn,
-      b.rating,
-      b.rating_count,
+    
       COALESCE(
         ARRAY_AGG(g.genre_name ORDER BY g.genre_name)
           FILTER (WHERE g.genre_name IS NOT NULL),
@@ -71,7 +70,7 @@ function buildBookQuery({ q, genre, rating, sort, id, limit = 100, offset = 0 })
     LEFT JOIN genres g ON g.genre_id = bg.genre_id
     ${where}
     GROUP BY b.book_id, b.title, a.author_name, b.published_year,
-             b.description, b.isbn, b.rating, b.rating_count
+             b.description, b.isbn
     ${having}
     ORDER BY ${orderBy}
     LIMIT $${limitIdx} OFFSET $${offsetIdx}
@@ -81,12 +80,12 @@ function buildBookQuery({ q, genre, rating, sort, id, limit = 100, offset = 0 })
 }
 
 router.get('/', asyncHandler(async (req, res) => {
-  const { q, genre, rating, sort, limit, offset } = req.query;
+  const { q, genre,  sort, limit, offset } = req.query;
 
   const { sql, params } = buildBookQuery({
     q: q?.trim(),
     genre: genre?.trim(),
-    rating: rating !== undefined && rating !== '' ? rating : null,
+    
     sort,
     limit,
     offset,
@@ -118,3 +117,16 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }));
 
 export default router;
+
+//add back into constsql when we rollout ratings
+ /*  b.rating,
+      b.rating_count, */
+
+//add back into group by when we rollout ratings
+//,b.rating, b.rating_count
+
+//add back into build book query
+//rating: rating !== undefined && rating !== '' ? rating : null,
+
+//add back into router.get
+//rating,

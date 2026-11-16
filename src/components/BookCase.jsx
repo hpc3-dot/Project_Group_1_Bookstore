@@ -1,4 +1,4 @@
-import books from '/public/bookstore-assets/books.json';
+
 import Book from './Book';
 import { useState, useEffect } from 'react';
 
@@ -9,9 +9,9 @@ function BookCase({ setPage, searchValues }) {
     useEffect(() => {
         async function fetchBooks() {
             try{
-                const response = await fetch('/public/bookstore-assets/books');
+                const response = await fetch('/api/books');
                 const data = await response.json();
-                setbooks(data);
+                setbooks(data.books);
                 console.log(data);
             } catch (err) {
                 setErrorMessage('Failed to fetch books. Please try again later.');
@@ -22,9 +22,9 @@ function BookCase({ setPage, searchValues }) {
 
     const filteredBooks = books.filter((book) => {
         const matchesSearch = book.title.toLowerCase().includes(searchValues.searchText.toLowerCase()) ||book.author.toLowerCase().includes(searchValues.searchText.toLowerCase());
-        const matchesGenre = searchValues.genre === '' || book.genre === searchValues.genre;
-        const matchesRating =searchValues.rating === '' || Number(book.rating) >= Number(searchValues.rating);
-        return matchesSearch && matchesGenre && matchesRating;
+        const matchesGenre = searchValues.genre === '' || book.genres.includes(searchValues.genre);
+        // const matchesRating =searchValues.rating === '' || Number(book.rating) >= Number(searchValues.rating);
+        return matchesSearch && matchesGenre/*  && matchesRating */;
 });
     return (
         <div className="bookCase">
